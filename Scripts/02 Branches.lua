@@ -18,11 +18,14 @@ function SelectMusicOrCourse()
 end
 
 function GameOverOrContinue()
-	if THEME:GetMetric("ScreenContinue", "ContinueEnabled") then
-		return "ScreenContinue"
+	if STATSMAN:GetCurStageStats():AllFailed() then
+		return "ScreenGameOver";
+	elseif GAMESTATE:GetCurrentStage() == 'Stage_Extra2' then
+		return "ScreenCredits";
 	else
-		return "ScreenGameOver"
+		return "ScreenMusicScroll";
 	end
+
 end
 
 Branch = {
@@ -230,7 +233,7 @@ Branch = {
 	end,
 	AfterContinue = function()
 		if GAMESTATE:GetNumPlayersEnabled() == 0 then
-			return "ScreenGameOver"
+			return GameOverOrContinue()
 		end
 
 		if STATSMAN:GetStagesPlayed() == 0 then

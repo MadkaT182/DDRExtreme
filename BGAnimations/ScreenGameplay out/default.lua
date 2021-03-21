@@ -123,4 +123,24 @@ return Def.ActorFrame {
 	LoadActor( "../_black" )..{
 		OnCommand=cmd(FullScreen;diffusealpha,0;sleep,2;linear,0.3;diffusealpha,1);
 	};
+
+	-- Def.ActorFrame {
+	-- 	Name="ClearedFrame";
+	-- 	Condition=GAMESTATE:GetPlayMode() ~= PLAY_MODE_BATTLE and GAMESTATE:GetPlayMode() ~= PLAY_MODE_RAVE;
+	-- 	LoadActor( "_extra1" ) .. {
+	-- 		Name="Extra1";
+	-- 		StartTransitioningCommand=cmd(visible,GAMESTATE:GetEarnedExtraStage() == 'EarnedExtraStage_Extra1');
+	-- 	};
+	-- 	LoadActor( "_extra2" ) .. {
+	-- 		Name="Extra2";
+	-- 		StartTransitioningCommand=cmd(visible,GAMESTATE:GetEarnedExtraStage() == 'EarnedExtraStage_Extra2');
+	-- 	};
+	-- 	LoadActor( HDActor("cleared") ) .. {
+	-- 		Name="Cleared";
+	-- 		InitCommand=cmd(Center;);
+	-- 		StartTransitioningCommand=cmd(visible,GAMESTATE:GetEarnedExtraStage() == 'EarnedExtraStage_No');
+	-- 		OnCommand=cmd(diffusealpha,0;sleep,1;linear,0.5;diffusealpha,1;sleep,2);
+	-- 	};
+	-- };
+
 }
