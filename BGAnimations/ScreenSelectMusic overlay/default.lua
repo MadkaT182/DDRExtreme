@@ -1,4 +1,5 @@
 return Def.ActorFrame {
+	LoadActor("../ScreenWithMenuElements overlay");
 	LoadActor( "../footer" )..{
 		OnCommand=cmd(draworder,100;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+218);
 	};

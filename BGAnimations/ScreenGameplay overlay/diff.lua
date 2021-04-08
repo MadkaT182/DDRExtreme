@@ -30,20 +30,20 @@ t[#t+1] = Def.ActorFrame{
 		local po = GAMESTATE:GetPlayerState(player):GetCurrentPlayerOptions();
 		self:x(player == PLAYER_1 and SCREEN_LEFT-84 or SCREEN_RIGHT+84);
 		if po:Reverse() ~= 0 then
-			self:y(SCREEN_TOP+19);
-			self:croptop(.5);
-		else
-			self:y(SCREEN_CENTER_Y+141+34);
+			self:y(SCREEN_TOP+69);
 			self:cropbottom(.5);
+		else
+			self:y(SCREEN_BOTTOM-99);
+			self:croptop(.5);
 		end;
 		self:pause();
 		self:setstate(LoadSteps(self,player));
 		self:linear(.534);
-		self:x(player == PLAYER_1 and SCREEN_LEFT+84 or SCREEN_RIGHT-84);
+		self:x(player == PLAYER_1 and SCREEN_LEFT+85 or SCREEN_RIGHT-85);
 	end;
 	OffCommand=function(self)
 		self:linear(.966);
-		self:x(player == PLAYER_1 and SCREEN_LEFT-84 or SCREEN_RIGHT+84);
+		self:x(player == PLAYER_1 and SCREEN_LEFT-85 or SCREEN_RIGHT+85);
 	end;
 	};
 };

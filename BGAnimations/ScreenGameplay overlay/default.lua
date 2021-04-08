@@ -1,7 +1,11 @@
 return Def.ActorFrame {
-	LoadActor(THEME:GetPathG("ScreenGameplay","LifeFrame"))..{
-		InitCommand=cmd(x,SCREEN_CENTER_X;y,SCREEN_TOP+58;draworder,3;addy,-50;linear,.6;addy,50);
+	Def.ActorFrame{
+		InitCommand=cmd(x,SCREEN_CENTER_X;y,SCREEN_TOP+50;draworder,3;addy,-50;linear,.6;addy,50);
         OffCommand=cmd(linear,1;addy,-100);
+        LoadActor(THEME:GetPathG("ScreenGameplay","LifeFrame"));
+        LoadActor("../gp_stage")..{
+        	InitCommand=cmd(y,-10);
+        };
 	};
 	LoadActor(THEME:GetPathG("ScreenGameplay","ScoreFrame"))..{
 		InitCommand=cmd(x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-78;draworder,3;addy,78;linear,.6;addy,-78);
